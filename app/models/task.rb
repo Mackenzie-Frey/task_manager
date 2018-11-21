@@ -1,10 +1,19 @@
-require 'sqlite3'
+require 'SQLite3'
+
 class Task
   def initialize(task_params)
     @description = task_params["description"]
     @title       = task_params["title"]
     @database = SQLite3::Database.new('db/task_manager_development.db')
     @database.results_as_hash = true
+  end
+
+  def title
+    @title
+  end
+
+  def description
+    @description
   end
 
   def save
