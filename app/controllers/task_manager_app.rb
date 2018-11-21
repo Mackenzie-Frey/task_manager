@@ -3,5 +3,6 @@ class TaskManagerApp < Sinatra::Base
 
   get '/' do
     'hello, world!'
+    erb :dashboard
   end
 end
