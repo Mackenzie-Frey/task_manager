@@ -6,6 +6,7 @@ class Task
     @title       = task_params["title"]
     @database = SQLite3::Database.new('db/task_manager_development.db')
     @database.results_as_hash = true
+    @id = task_params["id"] if task_params["id"]
   end
 
   def title
@@ -14,6 +15,10 @@ class Task
 
   def description
     @description
+  end
+
+  def id
+    @id
   end
 
   def save
